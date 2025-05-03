@@ -1,0 +1,118 @@
+# Русский языковой файл для плагина Zrtp
+# Автор: Zoobastiks
+
+# Префикс сообщений плагина
+prefix: "<gradient:#4B0082:#9400D3:#4B0082>〔РтП〕</gradient> "
+
+# Сообщения о телепортации
+teleport-started: "<gradient:#00FFFF:#0099FF>Телепортация через {delay} секунд.</gradient>\n<gradient:#4B0082:#9400D3:#4B0082>〔РтП〕</gradient> <gradient:#00FFFF:#0099FF>Не двигайтесь!</gradient> \n"
+teleport-success: "<gradient:#00FF00:#7FFF00>Вы прыбили.</gradient>"
+teleport-cancelled: "<gradient:#FF0000:#FF6347>Телепортация отменена из-за движения!</gradient>"
+preparing-coords: "<gradient:#00BFFF:#87CEFA>Ртп для {player} в мире {world}</gradient> \n"
+preparing-teleport: "<gradient:#00BFFF:#87CEFA>Подготовка к телепортации</gradient>"
+
+# Сообщения об ошибках
+no-permission: "<gradient:#FF5555:#FF0000>У вас нет разрешения на использование этой команды.</gradient>"
+cooldown: "<gradient:#FFA500:#FF8C00>Перезарядка {time} секунд.</gradient>"
+unsafe-location: "<gradient:#FF0000:#FF4500>Не удалось найти безопасную локацию. Попробуйте еще раз.</gradient>"
+world-disabled: "<gradient:#FF0000:#8B0000>Телепортация в этом мире отключена!</gradient>"
+not-enough-money: "<gradient:#FF5555:#FF0000>Недостаточно денег для телепортации. Требуется: {price}</gradient>"
+already-teleporting: "<gradient:#FFA500:#FF8C00>Вы уже находитесь в процессе телепортации.</gradient>"
+
+# Экономические сообщения
+money-withdrawn: "<gradient:#32CD32:#00FA9A>Вы заплатили {price} ⛃ за телепортацию.</gradient>\n"
+money-refunded: "<gradient:#FFA500:#FF8C00>Вам вернули {price} ⛃ за телепортацию.</gradient>"
+
+# Системные сообщения
+reload-success: "<gradient:#32CD32:#00FA9A>Плагин успешно перезагружен!</gradient>"
+
+# Справка
+help-message: |
+  <gradient:#FFD700:#FFA500>Список команд:</gradient>
+  <gradient:#87CEEB:#00BFFF>/rtp</gradient> - <gradient:#E0FFFF:#B0E0E6>Случайная телепортация</gradient>
+  <gradient:#87CEEB:#00BFFF>/wild</gradient> - <gradient:#E0FFFF:#B0E0E6>То же, что и /rtp</gradient>
+  <gradient:#87CEEB:#00BFFF>/rtp reload</gradient> - <gradient:#E0FFFF:#B0E0E6>Перезагрузить плагин</gradient>
+  <gradient:#87CEEB:#00BFFF>/rtp <игрок></gradient> - <gradient:#E0FFFF:#B0E0E6>Телепортировать другого игрока</gradient>
+  <gradient:#87CEEB:#00BFFF>/rtp <игрок> <мир></gradient> - <gradient:#E0FFFF:#B0E0E6>Телепортировать игрока в указанный мир</gradient>
+
+# Дополнительные сообщения
+permission-denied: "<gradient:#FF0000:#FF6347>У вас нет прав на использование этой команды!</gradient>"
+teleport-cooldown: "<gradient:#FF6347:#FF4500>Телепортация будет доступна через {time}!</gradient>"
+teleport-delay: "<gradient:#FFD700:#FFA500>Телепортация через {time} секунд.</gradient>"
+world-not-found: "<gradient:#FF0000:#8B0000>Указанный мир не найден!</gradient>"
+player-teleported: "<gradient:#00FFCC:#33CCFF>Игрок {player} успешно телепортирован!</gradient>"
+teleport-to-world: "<gradient:#00BFFF:#87CEFA>Телепортация в мир {world}...</gradient>"
+
+# Сообщения эффектов телепортации
+teleport-effects:
+  # Заголовки
+  title-cancel: "Телепортация отменена!"
+  title-teleport: "Телепортация!"
+  actionbar-countdown: "Телепортация через {count}"
+  
+  # Стадия 1: Лаборатория и поиск
+  stage1:
+    - "⚡ Лаборатория активирована!"
+    - "🧪 Поиск локации начат."
+    - "🌍 Ищем безопасную точку..."
+  
+  # Стадия 2: Связь и сканирование
+  stage2:
+    - "📡 Связь установлена."
+    - "🛰 Cканируем координаты..."
+    - "📍 Подходящее место найдено!"
+  
+  # Стадия 3: Проверка и стабильность
+  stage3:
+    - "🔐 Проверка завершена."
+    - "🧬 Пространство стабильно."
+    - "💥 Ошибок не обнаружено."
+  
+  # Стадия 4: Подготовка к телепортации
+  stage4:
+    - "📊 Команда \"/rtp\" принята!"
+    - "🧠 Подготовка завершена."
+    - "🛸 Телепорт почти готов..."
+  
+  # Отсчет
+  countdown:
+    - "⏳ Начинаем отсчёт:"
+    - "3..."
+    - "2..."
+    - "1..."
+  
+  # Финальное сообщение
+  teleport: "🚀 Телепортация началась!"
+
+# Сообщения после телепортации
+post-teleport:
+  # Информация о локации
+  location-info:
+    title: "<gradient:#FF6347:#FF4500>Спутник дал сбой.</gradient>"
+    subtitle: "<gradient:#87CEEB:#00BFFF>Вы приземлились:</gradient>"
+    coords: "<gradient:#FFFFFF:#E0FFFF>Координаты: X:{x}, Y:{y}, Z:{z}</gradient>"
+    world: "<gradient:#FFFFFF:#E0FFFF>Мир: {world}</gradient>"
+    biome: "<gradient:#FFFFFF:#E0FFFF>Биом: {biome}</gradient>"
+  
+  # Сообщения о награде
+  reward:
+    searching:
+      - "<gradient:#00FF00:#7FFF00>⚡ Телепортация завершена!</gradient>"
+      - "<gradient:#87CEEB:#00BFFF>🛸 Ты оказался в новой локации.</gradient>"
+      - "<gradient:#FFD700:#FFA500>🔍 Осмотрим ближайшее окружение...</gradient>"
+    found: "<gradient:#FFA500:#FF8C00>🗣 О, сундук! Обнаружен!</gradient>"
+    contents: "<gradient:#00FF00:#32CD32>📦 Внутри сундука:</gradient>"
+    item: "<gradient:#FFFFFF:#E0FFFF>📦 {item} x{count}</gradient>"
+    chance: "<gradient:#FFD700:#FFA500>🎉 Шанс: {chance}%</gradient>"
+
+  # Сообщения о мобах
+  mobs:
+    spawned: "<gradient:#FF6347:#FF4500>⚠️ Внимание! Рядом появились враги!</gradient>"
+    friendly: "<gradient:#00FF00:#32CD32>🐾 К вам подошло дружелюбное существо.</gradient>"
+
+  # Сообщения о различных эффектах
+  effects:
+    damage: "<gradient:#FF0000:#8B0000>💔 Телепортация повредила вашему здоровью!</gradient>"
+    hunger: "<gradient:#A0522D:#8B4513>🍗 Вы ощущаете сильный голод после телепортации.</gradient>"
+    lightning: "<gradient:#FFD700:#FFA500>⚡ Молния ударила рядом с вами!</gradient>"
+    command: "<gradient:#32CD32:#00FA9A>✅ Активировано специальное действие!</gradient>" 
