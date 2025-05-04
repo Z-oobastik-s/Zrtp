@@ -297,4 +297,13 @@ public class Cfg {
     public void finishLoading() {
         loadPostTeleportEffectsConfig();
     }
+    
+    /**
+     * Проверяет, настроен ли мир явно в конфигурации
+     * @param worldName Имя мира для проверки
+     * @return true, если мир указан в секции worlds конфигурации
+     */
+    public boolean isWorldConfigured(String worldName) {
+        return worldConfigs.containsKey(worldName);
+    }
 } 

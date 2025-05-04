@@ -176,6 +176,17 @@ public class RtpCmd implements CommandExecutor, TabCompleter {
             return;
         }
         
+        // Проверяем, настроен ли мир в конфигурации
+        if (!plugin.getPluginConfig().isWorldConfigured(worldName)) {
+            // Сообщаем о невозможности телепортации в ненастроенный мир
+            if (sender instanceof Player) {
+                plugin.getLang().sendMessage((Player) sender, Lang.Keys.WORLD_NOT_CONFIGURED);
+            } else {
+                sender.sendMessage("Телепортация в мире '" + worldName + "' не настроена. Добавьте его в config.yml.");
+            }
+            return;
+        }
+        
         WorldCfg worldConfig = plugin.getPluginConfig().getWorldConfig(worldName);
         if (!worldConfig.isEnabled()) {
             sender.sendMessage("Телепортация в мир '" + worldName + "' отключена");
@@ -252,18 +263,58 @@ public class RtpCmd implements CommandExecutor, TabCompleter {
             return;
         }
         
-        // Сообщение о подготовке к телепортации
-        plugin.getLang().sendMessage(player, Lang.Keys.PREPARING_TELEPORT);
+        World world = player.getWorld();
+        String worldName = world.getName();
         
-        // Или использование продвинутых TagResolver для плейсхолдеров
-        if (plugin.getPluginConfig().getWorldConfig(player.getWorld().getName()).getDelay() > 0) {
-            plugin.getLang().sendMessage(player, Lang.Keys.PREPARING_COORDS, 
-                "player", player.getName(),
-                "world", player.getWorld().getName()
-            );
+        // Проверяем, настроен ли мир в конфигурации
+        if (!plugin.getPluginConfig().isWorldConfigured(worldName)) {
+            // Сообщаем игроку, что в этом мире телепортация не настроена
+            plugin.getLang().sendMessage(player, Lang.Keys.WORLD_NOT_CONFIGURED);
+            return;
         }
         
-        // Запуск телепортации
+        // Получаем настройки для мира игрока
+        WorldCfg worldConfig = plugin.getPluginConfig().getWorldConfig(worldName);
+        
+        // Проверяем, что телепортация включена в данном мире
+        if (!worldConfig.isEnabled()) {
+            plugin.getLang().sendMessage(player, Lang.Keys.WORLD_DISABLED);
+            return;
+        }
+        
+        // Проверка на кулдаун, если игрок не имеет права его игнорировать
+        if (!player.hasPermission("rtp.nocooldown") && !player.hasPermission("rtp.bypass")) {
+            long lastUsage = plugin.getCooldowns().getOrDefault(player.getUniqueId(), 0L);
+            long currentTime = System.currentTimeMillis();
+            long cooldownTime = worldConfig.getCooldown() * 1000L;
+            
+            if (lastUsage + cooldownTime > currentTime) {
+                long remainingTime = (lastUsage + cooldownTime - currentTime) / 1000;
+                
+                plugin.getLang().sendAdvancedMessage(player, Lang.Keys.COOLDOWN, 
+                    Placeholder.parsed("time", String.valueOf(remainingTime))
+                );
+                return;
+            }
+        }
+        
+        // Проверка экономики, если цена больше 0
+        if (worldConfig.getPrice() > 0 && plugin.getEconomyManager().isEnabled()) {
+            if (!plugin.getEconomyManager().hasMoney(player, worldConfig.getPrice())) {
+                plugin.getLang().sendAdvancedMessage(player, Lang.Keys.NOT_ENOUGH_MONEY,
+                    Placeholder.parsed("price", String.format("%.2f", worldConfig.getPrice()))
+                );
+                return;
+            }
+        }
+        
+        // Проверка, не телепортируется ли игрок уже
+        if (plugin.getTaskManager().isPlayerTeleporting(player.getUniqueId())) {
+            plugin.getLang().sendMessage(player, Lang.Keys.ALREADY_TELEPORTING);
+            return;
+        }
+        
+        // Инициируем телепортацию
         plugin.getTaskManager().startTeleport(player);
     }
     

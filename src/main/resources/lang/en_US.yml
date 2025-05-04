@@ -16,6 +16,7 @@ no-permission: "<gradient:#FF5555:#FF0000>You don't have permission to use this 
 cooldown: "<gradient:#FFA500:#FF8C00>Cooldown {time} seconds.</gradient>"
 unsafe-location: "<gradient:#FF0000:#FF4500>Failed to find a safe location. Please try again.</gradient>"
 world-disabled: "<gradient:#FF0000:#8B0000>Teleportation in this world is disabled!</gradient>"
+world-not-configured: "<gradient:#FF0000:#8B0000>Teleportation in this world is not configured! Please use /rtp in standard worlds.</gradient>"
 not-enough-money: "<gradient:#FF5555:#FF0000>Not enough money for teleportation. Required: {price}</gradient>"
 already-teleporting: "<gradient:#FFA500:#FF8C00>You are already in the process of teleportation.</gradient>"
 

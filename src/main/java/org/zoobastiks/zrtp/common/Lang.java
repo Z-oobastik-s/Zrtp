@@ -54,6 +54,7 @@ public class Lang {
         COOLDOWN("cooldown"),
         UNSAFE_LOCATION("unsafe-location"),
         WORLD_DISABLED("world-disabled"),
+        WORLD_NOT_CONFIGURED("world-not-configured"),
         NOT_ENOUGH_MONEY("not-enough-money"),
         MONEY_WITHDRAWN("money-withdrawn"),
         MONEY_REFUNDED("money-refunded"),
@@ -155,6 +156,7 @@ public class Lang {
         defaults.put(Keys.COOLDOWN, "<gradient:#FFA500:#FF8C00>Подождите {time} секунд перед следующей телепортацией.</gradient>");
         defaults.put(Keys.UNSAFE_LOCATION, "<gradient:#FF5555:#FF0000>Не удалось найти безопасное место для телепортации.</gradient>");
         defaults.put(Keys.WORLD_DISABLED, "<gradient:#FF5555:#FF0000>Телепортация в этом мире отключена.</gradient>");
+        defaults.put(Keys.WORLD_NOT_CONFIGURED, "<gradient:#FF5555:#FF0000>Телепортация в этом мире не настроена.</gradient>");
         defaults.put(Keys.NOT_ENOUGH_MONEY, "<gradient:#FF5555:#FF0000>Недостаточно денег для телепортации. Требуется: {price}</gradient>");
         defaults.put(Keys.MONEY_WITHDRAWN, "<gradient:#32CD32:#00FA9A>С вас снято {price} за телепортацию.</gradient>");
         defaults.put(Keys.MONEY_REFUNDED, "<gradient:#FFA500:#FF8C00>Вам возвращено {price} за отмененную телепортацию.</gradient>");

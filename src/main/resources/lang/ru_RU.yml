@@ -16,6 +16,7 @@ no-permission: "<gradient:#FF5555:#FF0000>У вас нет разрешения 
 cooldown: "<gradient:#FFA500:#FF8C00>Перезарядка {time} секунд.</gradient>"
 unsafe-location: "<gradient:#FF0000:#FF4500>Не удалось найти безопасную локацию. Попробуйте еще раз.</gradient>"
 world-disabled: "<gradient:#FF0000:#8B0000>Телепортация в этом мире отключена!</gradient>"
+world-not-configured: "<gradient:#FF0000:#8B0000>Телепортация в этом мире не настроена! Пожалуйста, используйте /rtp в стандартных мирах.</gradient>"
 not-enough-money: "<gradient:#FF5555:#FF0000>Недостаточно денег для телепортации. Требуется: {price}</gradient>"
 already-teleporting: "<gradient:#FFA500:#FF8C00>Вы уже находитесь в процессе телепортации.</gradient>"
 

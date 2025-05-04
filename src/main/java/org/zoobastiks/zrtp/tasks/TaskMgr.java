@@ -636,13 +636,12 @@ public class TaskMgr {
                     // Проверяем уровень ног и головы
                     if (dx == 0 && dz == 0) continue; // Уже проверено в isSafeToStand
                     
-                    block = world.getBlockAt(x + dx, y, z + dz);
-                    if (!block.getType().isAir() && !block.getType().isTransparent()) {
+                    if (!block.getType().isAir() && block.getType().isSolid()) {
                         return false;
                     }
                     
                     block = world.getBlockAt(x + dx, y + 1, z + dz);
-                    if (!block.getType().isAir() && !block.getType().isTransparent()) {
+                    if (!block.getType().isAir() && block.getType().isSolid()) {
                         return false;
                     }
                 }
