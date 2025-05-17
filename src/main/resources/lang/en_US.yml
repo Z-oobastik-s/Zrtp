@@ -1,0 +1,119 @@
+# English language file for Zrtp plugin
+# Author: Zoobastiks
+
+# Plugin message prefix
+prefix: "<gradient:#4B0082:#9400D3:#4B0082>〔RTP〕</gradient> "
+
+# Teleportation messages
+teleport-started: "<gradient:#00FFFF:#0099FF>Teleportation in <delay> seconds.</gradient>\n<gradient:#4B0082:#9400D3:#4B0082>〔RTP〕</gradient> <gradient:#00FFFF:#0099FF>Don't move!</gradient> \n"
+teleport-success: "<gradient:#00FF00:#7FFF00>You have arrived.</gradient>"
+teleport-cancelled: "<gradient:#FF0000:#FF6347>Teleportation cancelled due to movement!</gradient>"
+preparing-coords: "<gradient:#00BFFF:#87CEFA>RTP for <player> in world <world></gradient> \n"
+preparing-teleport: "<gradient:#00BFFF:#87CEFA>Preparing teleportation</gradient>"
+
+# Error messages
+no-permission: "<gradient:#FF5555:#FF0000>You don't have permission to use this command.</gradient>"
+cooldown: "<gradient:#FFA500:#FF8C00>Cooldown <time> seconds.</gradient>"
+unsafe-location: "<gradient:#FF0000:#FF4500>Failed to find a safe location. Please try again.</gradient>"
+world-disabled: "<gradient:#FF0000:#8B0000>Teleportation in this world is disabled!</gradient>"
+world-not-configured: "<gradient:#FF0000:#8B0000>Teleportation in this world is not configured! Please use /rtp in standard worlds.</gradient>"
+not-enough-money: "<gradient:#FF5555:#FF0000>Not enough money for teleportation. Required: <price></gradient>"
+already-teleporting: "<gradient:#FFA500:#FF8C00>You are already in the process of teleportation.</gradient>"
+
+# Economy messages
+money-withdrawn: "<gradient:#32CD32:#00FA9A>You paid <price> ⛃ for teleportation.</gradient>\n"
+money-refunded: "<gradient:#FFA500:#FF8C00>You were refunded <price> ⛃ for teleportation.</gradient>"
+
+# System messages
+reload-success: "<gradient:#32CD32:#00FA9A>Plugin successfully reloaded!</gradient>"
+
+# Help
+help-message: |
+  <gradient:#FFD700:#FFA500>Command List:</gradient>
+  <gradient:#87CEEB:#00BFFF>/rtp</gradient> - <gradient:#E0FFFF:#B0E0E6>Random teleportation</gradient>
+  <gradient:#87CEEB:#00BFFF>/wild</gradient> - <gradient:#E0FFFF:#B0E0E6>Same as /rtp</gradient>
+  <gradient:#87CEEB:#00BFFF>/rtp reload</gradient> - <gradient:#E0FFFF:#B0E0E6>Reload the plugin</gradient>
+  <gradient:#87CEEB:#00BFFF>/rtp <player></gradient> - <gradient:#E0FFFF:#B0E0E6>Teleport another player</gradient>
+  <gradient:#87CEEB:#00BFFF>/rtp <player> <world></gradient> - <gradient:#E0FFFF:#B0E0E6>Teleport player to specified world</gradient>
+
+# Additional messages
+permission-denied: "<gradient:#FF0000:#FF6347>You don't have permission to use this command!</gradient>"
+teleport-cooldown: "<gradient:#FF6347:#FF4500>Teleportation will be available in <time>!</gradient>"
+teleport-delay: "<gradient:#FFD700:#FFA500>Teleportation in <time> seconds.</gradient>"
+world-not-found: "<gradient:#FF0000:#8B0000>The specified world was not found!</gradient>"
+player-teleported: "<gradient:#00FFCC:#33CCFF>Player <player> has been successfully teleported!</gradient>"
+teleport-to-world: "<gradient:#00BFFF:#87CEFA>Teleporting to world <world>...</gradient>"
+
+# Teleportation effect messages
+teleport-effects:
+  # Titles
+  title-cancel: "Teleportation Cancelled!"
+  title-teleport: "Teleportation!"
+  actionbar-countdown: "Teleportation in {count}"
+  
+  # Stage 1: Laboratory and search
+  stage1:
+    - "⚡ Laboratory activated!"
+    - "🧪 Location search initiated."
+    - "🌍 Looking for a safe spot..."
+  
+  # Stage 2: Connection and scanning
+  stage2:
+    - "📡 Connection established."
+    - "🛰 Scanning coordinates..."
+    - "📍 Suitable location found!"
+  
+  # Stage 3: Verification and stability
+  stage3:
+    - "🔐 Verification completed."
+    - "🧬 Space is stable."
+    - "💥 No errors detected."
+  
+  # Stage 4: Preparation for teleportation
+  stage4:
+    - "📊 Command \"/rtp\" accepted!"
+    - "🧠 Preparation complete."
+    - "🛸 Teleport almost ready..."
+  
+  # Countdown
+  countdown:
+    - "⏳ Starting countdown:"
+    - "3..."
+    - "2..."
+    - "1..."
+  
+  # Final message
+  teleport: "🚀 Teleportation initiated!"
+
+# Post-teleportation messages
+post-teleport:
+  # Location information
+  location-info:
+    title: "<gradient:#FF6347:#FF4500>Satellite malfunction.</gradient>"
+    subtitle: "<gradient:#87CEEB:#00BFFF>You landed at:</gradient>"
+    coords: "<gradient:#FFFFFF:#E0FFFF>Coordinates: X:<x>, Y:<y>, Z:<z></gradient>"
+    world: "<gradient:#FFFFFF:#E0FFFF>World: <world></gradient>"
+    biome: "<gradient:#FFFFFF:#E0FFFF>Biome: <biome></gradient>"
+  
+  # Reward messages
+  reward:
+    searching:
+      - "<gradient:#00FF00:#7FFF00>⚡ Teleportation completed!</gradient>"
+      - "<gradient:#87CEEB:#00BFFF>🛸 You have arrived at a new location.</gradient>"
+      - "<gradient:#FFD700:#FFA500>🔍 Let's check the surroundings...</gradient>"
+    found: "<gradient:#FFA500:#FF8C00>🗣 Oh, a chest! Discovered!</gradient>"
+    contents: "<gradient:#00FF00:#32CD32>📦 Inside the chest:</gradient>"
+    item: "<gradient:#FFFFFF:#E0FFFF>📦 <item> x<count></gradient>"
+    chance: "<gradient:#FFD700:#FFA500>🎉 Chance: <chance>%</gradient>"
+
+  # Mob messages
+  mobs:
+    spawned: "<gradient:#FF6347:#FF4500>⚠️ Warning! Enemies have appeared nearby!</gradient>"
+    friendly: "<gradient:#00FF00:#32CD32>🐾 A friendly creature has approached you.</gradient>"
+
+  # Effect messages
+  effects:
+    damage: "<gradient:#FF0000:#8B0000>💔 Teleportation has damaged your health!</gradient>"
+    hunger: "<gradient:#A0522D:#8B4513>🍗 You feel extremely hungry after teleportation.</gradient>"
+    lightning: "<gradient:#FFD700:#FFA500>⚡ Lightning struck near you!</gradient>"
+    command: "<gradient:#32CD32:#00FA9A>✅ Special action activated!</gradient>" 

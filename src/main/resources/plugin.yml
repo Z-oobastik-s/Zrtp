@@ -1,0 +1,67 @@
+name: Zrtp
+version: ${version}
+main: org.zoobastiks.zrtp.Zrtp
+api-version: 1.20
+authors: [Zoobastik]
+description: Плагин для случайной телепортации в безопасные локации
+softdepend: [Vault]
+website: https://github.com/zoobastik
+
+commands:
+  rtp:
+    description: Телепортация игрока в случайное место
+    aliases: [wild, randomtp, ртп]
+    usage: |
+      /<command> - Телепортировать себя
+      /<command> <игрок> - Телепортировать игрока
+      /<command> <игрок> <мир> - Телепортировать игрока в указанный мир
+      /<command> reload - Перезагрузить плагин
+      /<command> help - Показать справку
+  wild:
+    description: Телепортация игрока в случайное место (алиас для /rtp)
+    permission: rtp.use
+    usage: |
+      /<command> - Телепортировать себя
+      /<command> <игрок> - Телепортировать игрока
+      /<command> <игрок> <мир> - Телепортировать игрока в указанный мир
+      /<command> reload - Перезагрузить плагин
+      /<command> help - Показать справку
+
+permissions:
+  rtp.use:
+    description: Разрешает использовать команду телепортации
+    default: true
+  rtp.bypass:
+    description: Игнорирует кулдаун телепортации
+    default: op
+  rtp.bypass.delay:
+    description: Игнорирует задержку перед телепортацией
+    default: op
+  rtp.other:
+    description: Разрешает телепортировать других игроков
+    default: op
+  rtp.reload:
+    description: Разрешает перезагружать плагин
+    default: op
+  rtp.notme:
+    description: Запрещает другим телепортировать этого игрока
+    default: false
+  rtp.onevent.join:
+    description: Устарело - больше не используется
+    default: false
+  rtp.onevent.firstJoin:
+    description: Устарело - больше не используется
+    default: false
+  rtp.onevent.respawn:
+    description: Устарело - больше не используется
+    default: false
+  rtp.*:
+    description: Все разрешения плагина
+    default: op
+    children:
+      rtp.use: true
+      rtp.reload: true
+      rtp.other: true
+      rtp.notme: true
+      rtp.bypass: true
+      rtp.bypass.delay: true
